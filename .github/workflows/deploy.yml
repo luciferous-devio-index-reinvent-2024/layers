@@ -14,15 +14,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: hashicorp/setup-terraform@v2
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 3.10.0
       - uses: docker/setup-qemu-action@v3
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.ARN_IAM_ROLE }}
           aws-region: ap-northeast-1
       - run: make build
-      - run: terraform init
+      - run: |
+          terraform init \
+            -backend-config="bucket=$BACKEND_S3_BUCKET" \
+            -backend-config="key=$BACKEND_S3_KEY" \
+            -backend-config="region=$BACKEND_REGION"
+        env:
+          BACKEND_S3_BUCKET: ${{ secrets.TF_BACKEND_S3_BUCKET }}
+          BACKEND_S3_KEY: layers/state.json
+          BACKEND_REGION: ${{ vars.AWS_REGION }}
       - run: terraform apply -auto-approve
+        env:
+          TF_VAR_REGION: ${{ vars.AWS_REGION }}
+          TF_VAR_SYSTEM_NAME: devio-index-reinvent-2024
+          TF_VAR_S3_BUCKET: ${{ secrets.S3_BUCKET_DATA }}
+          TF_VAR_S3_KEY_PREFIX: artifacts/layers
       - run: terraform output
       - run: tar cf layers.tar *
         if: always()
