@@ -44,8 +44,8 @@ variable "SYSTEM_NAME" {
 }
 
 variable "S3_BUCKET" {
-  type     = string
-  nullable = false
+  type      = string
+  nullable  = false
   sensitive = true
 }
 
