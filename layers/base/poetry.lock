@@ -34,6 +34,7 @@ files = [
 botocore-stubs = "*"
 mypy-boto3-events = {version = ">=1.35.0,<1.36.0", optional = true, markers = "extra == \"events\""}
 mypy-boto3-s3 = {version = ">=1.35.0,<1.36.0", optional = true, markers = "extra == \"s3\""}
+mypy-boto3-ssm = {version = ">=1.35.0,<1.36.0", optional = true, markers = "extra == \"ssm\""}
 types-s3transfer = "*"
 
 [package.extras]
@@ -512,6 +513,17 @@ files = [
 ]
 
 [[package]]
+name = "mypy-boto3-ssm"
+version = "1.35.67"
+description = "Type annotations for boto3 SSM 1.35.67 service generated with mypy-boto3-builder 8.3.1"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "mypy_boto3_ssm-1.35.67-py3-none-any.whl", hash = "sha256:f4971c30bd530cb651784b8a9a2eeb7333c377eac191d78743aa4b1c54094b32"},
+    {file = "mypy_boto3_ssm-1.35.67.tar.gz", hash = "sha256:dab8080e003e63b1d8df907869bb0f1608ae51c35efddaa2c6bb83e34b8891a8"},
+]
+
+[[package]]
 name = "python-dateutil"
 version = "2.9.0.post0"
 description = "Extensions to the standard Python datetime module"
@@ -595,4 +607,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.13"
-content-hash = "171809683bf8fd363108e0679230a17c93c97046b5e0dc55037dc629d2760aaa"
+content-hash = "9126768c658f3d9d868dc76b93efa70981168553596f7cf2a598113d36f82aaa"
