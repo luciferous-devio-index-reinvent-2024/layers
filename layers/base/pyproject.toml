@@ -10,6 +10,7 @@ package-mode = false
 python = "^3.13"
 boto3 = "==1.35.72"
 boto3-stubs = {version = "1.35.72", extras = ["events", "s3", "ssm"]}
+aws-cloudwatch-logs-url = "1.0.3"
 
 
 [build-system]
