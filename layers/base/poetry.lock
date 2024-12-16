@@ -45,6 +45,7 @@ files = [
 botocore-stubs = "*"
 mypy-boto3-events = {version = ">=1.35.0,<1.36.0", optional = true, markers = "extra == \"events\""}
 mypy-boto3-s3 = {version = ">=1.35.0,<1.36.0", optional = true, markers = "extra == \"s3\""}
+mypy-boto3-sns = {version = ">=1.35.0,<1.36.0", optional = true, markers = "extra == \"sns\""}
 mypy-boto3-ssm = {version = ">=1.35.0,<1.36.0", optional = true, markers = "extra == \"ssm\""}
 types-s3transfer = "*"
 
@@ -524,6 +525,17 @@ files = [
 ]
 
 [[package]]
+name = "mypy-boto3-sns"
+version = "1.35.68"
+description = "Type annotations for boto3 SNS 1.35.68 service generated with mypy-boto3-builder 8.3.1"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "mypy_boto3_sns-1.35.68-py3-none-any.whl", hash = "sha256:d03e754e74a386ab7bc7af0d0038e79ba6648b803b90aed325d67bd09c78e666"},
+    {file = "mypy_boto3_sns-1.35.68.tar.gz", hash = "sha256:5a7def707ac298c312e0b713421cdcb583e0d993d217b4818104b3e386c9c86a"},
+]
+
+[[package]]
 name = "mypy-boto3-ssm"
 version = "1.35.67"
 description = "Type annotations for boto3 SSM 1.35.67 service generated with mypy-boto3-builder 8.3.1"
@@ -618,4 +630,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.13"
-content-hash = "b9ae12d9c775cd34df13276cb33854526588afc97b716e12e86779fbfab58efa"
+content-hash = "8d6bb268b0d4419f997ca4942e981d72d8ebeaf2197628adabb7ca8c09e511cb"
